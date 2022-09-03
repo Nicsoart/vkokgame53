@@ -102,6 +102,7 @@
     }
 
     function GetPlayerData(key) {
+      console.log(key);
       var callbackKeys = function(status, data, error) {
         if (data) {
           if (data.keys.length > 0) {
