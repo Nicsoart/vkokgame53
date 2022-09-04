@@ -171,6 +171,7 @@
     }
 
     function PlatformInitialization() {
+      console.log('PlatformInitialization');
       try {
         var rParams = FAPI.Util.getRequestParameters();
         if (rParams.api_server !== "undefined" && rParams.api_server == "https://api.ok.ru/") {
