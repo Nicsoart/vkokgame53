@@ -179,10 +179,12 @@
           OKAdsInitialization();
         } else {
           unityInstance.SendMessage('VKMechanicsController', 'VKInitialization');
+          console.log('VKInitialization');
           VKAdsInitialization();
         }
       } catch (e) {
         unityInstance.SendMessage('VKMechanicsController', 'VKInitialization');
+        console.log('VKInitialization');
         VKAdsInitialization();
       }
     }
