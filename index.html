@@ -172,22 +172,6 @@
 
     function PlatformInitialization() {
       console.log('PlatformInitialization');
-      try {
-        var rParams = FAPI.Util.getRequestParameters();
-        if (rParams.api_server !== "undefined" && rParams.api_server == "https://api.ok.ru/") {
-          unityInstance.SendMessage('VKMechanicsController', 'OKInitialization');
-          console.log('OKInitialization');
-          OKAdsInitialization();
-        } else {
-          unityInstance.SendMessage('VKMechanicsController', 'VKInitialization');
-          console.log('VKInitialization');
-          VKAdsInitialization();
-        }
-      } catch (e) {
-        unityInstance.SendMessage('VKMechanicsController', 'VKInitialization');
-        console.log('VKInitialization');
-        VKAdsInitialization();
-      }
     }
 
 // OK
