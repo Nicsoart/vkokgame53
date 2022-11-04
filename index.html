@@ -9,9 +9,8 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build12.json", {onProgress: UnityProgress});
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build13.json", {onProgress: UnityProgress});
     </script>
-
 
     <script type = "text/javascript" language = "javascript">
     var fullscreenID;
@@ -390,31 +389,31 @@
 
 // Full Screen
     function ShowFullScreen() {
-      //document.getElementById('yandex_rtb_' + fullscreenID).style.display = 'block';
-      //Ya.Context.AdvManager.render({
-        //renderTo: 'yandex_rtb_' + fullscreenID,
-        //blockId: fullscreenID,
-        //onError: (data) => {
+      document.getElementById('yandex_rtb_' + fullscreenID).style.display = 'block';
+      Ya.Context.AdvManager.render({
+        renderTo: 'yandex_rtb_' + fullscreenID,
+        blockId: fullscreenID,
+        onError: (data) => {
           unityInstance.SendMessage('AdsManager', 'CloseFullScreen');
-        //},
-        //onRender: (data) => {
-          //unityInstance.SendMessage('AdsManager', 'FullScreenLoaded');
-        //}
-      //})
+        },
+        onRender: (data) => {
+          unityInstance.SendMessage('AdsManager', 'FullScreenLoaded');
+        }
+      })
     }
 
     function ShowMobileFullScreen() {
-      //document.getElementById('yandex_rtb_' + mobilefullscreenID).style.display = 'block';
-      //Ya.Context.AdvManager.render({
-        //renderTo: 'yandex_rtb_' + mobilefullscreenID,
-        //blockId: mobilefullscreenID,
-        //onError: (data) => {
+      document.getElementById('yandex_rtb_' + mobilefullscreenID).style.display = 'block';
+      Ya.Context.AdvManager.render({
+        renderTo: 'yandex_rtb_' + mobilefullscreenID,
+        blockId: mobilefullscreenID,
+        onError: (data) => {
           unityInstance.SendMessage('AdsManager', 'CloseFullScreen');
-        //},
-        //onRender: (data) => {
-          //unityInstance.SendMessage('AdsManager', 'FullScreenLoaded');
-        //}
-      //})
+        },
+        onRender: (data) => {
+          unityInstance.SendMessage('AdsManager', 'FullScreenLoaded');
+        }
+      })
     }
 
     function CloseFullScreen() {
@@ -427,25 +426,25 @@
 
 // Banner
     function ShowBanner() {
-      //document.getElementById('yandex_rtb_' + horizontalbannerID).style.display = 'block';
-      //Ya.Context.AdvManager.render({
-        //renderTo: 'yandex_rtb_' + horizontalbannerID,
-        //blockId: horizontalbannerID,
-        //onError: (data) => {
+      document.getElementById('yandex_rtb_' + horizontalbannerID).style.display = 'block';
+      Ya.Context.AdvManager.render({
+        renderTo: 'yandex_rtb_' + horizontalbannerID,
+        blockId: horizontalbannerID,
+        onError: (data) => {
           unityInstance.SendMessage('AdsManager', 'CloseBanner');
-        //}
-      //})
+        }
+      })
     }
 
     function ShowMobileBanner() {
-      //document.getElementById('yandex_rtb_' + mobilebannerID).style.display = 'block';
-      //Ya.Context.AdvManager.render({
-        //renderTo: 'yandex_rtb_' + mobilebannerID,
-        //blockId: mobilebannerID,
-        //onError: (data) => {
-          //unityInstance.SendMessage('AdsManager', 'CloseBanner');
-        //}
-      //})
+      document.getElementById('yandex_rtb_' + mobilebannerID).style.display = 'block';
+      Ya.Context.AdvManager.render({
+        renderTo: 'yandex_rtb_' + mobilebannerID,
+        blockId: mobilebannerID,
+        onError: (data) => {
+          unityInstance.SendMessage('AdsManager', 'CloseBanner');
+        }
+      })
     }
 
     function CloseBanner() {
