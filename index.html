@@ -136,9 +136,11 @@
                 }
               }
             }
+          } else {
+            unityInstance.SendMessage('PlayerManager', 'GetPlayerDataFromPlayerPrefs', key);
+            console.log("GetPlayerDataFromPlayerPrefs3_" + key);
+            break;
           }
-        } else {
-          console.log("No_data");
         }
       };
       FAPI.Client.call({"method":"storage.getKeys"}, callbackKeys);
