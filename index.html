@@ -104,6 +104,7 @@
       console.log(key);
       var callbackKeys = function(status, data, error) {
         if (data) {
+          console.log(data);
           if (data.keys.length > 0) {
             for (let i = 0; i <= data.keys.length; i++) {
               if (i == data.keys.length) {
@@ -137,7 +138,7 @@
             }
           }
         } else {
-          console.log(error);
+          console.log("No_data");
         }
       };
       FAPI.Client.call({"method":"storage.getKeys"}, callbackKeys);
