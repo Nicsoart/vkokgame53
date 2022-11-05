@@ -116,6 +116,7 @@
                       if (typeof data.data[Object.keys(data.data)[0]] !== "undefined") {
                         let reskey = key + "|" + data.data[Object.keys(data.data)[0]];
                         unityInstance.SendMessage('PlayerManager', 'GetPlayerData', reskey);
+                        console.log(reskey);
                       } else {
                         unityInstance.SendMessage('PlayerManager', 'GetPlayerDataFromPlayerPrefs', key);
                       }
