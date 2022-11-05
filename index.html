@@ -101,15 +101,12 @@
     }
 
     function GetPlayerData(key) {
-      console.log(key);
       var callbackKeys = function(status, data, error) {
         if (data) {
-          console.log(data);
           if (data.keys.length > 0) {
             for (let i = 0; i <= data.keys.length; i++) {
               if (i == data.keys.length) {
                 unityInstance.SendMessage('PlayerManager', 'GetPlayerDataFromPlayerPrefs', key);
-                console.log("GetPlayerDataFromPlayerPrefs1_" + key);
                 break;
               } else {
                 if (data.keys[i] == key) {
@@ -119,18 +116,14 @@
                       if (typeof data.data[Object.keys(data.data)[0]] !== "undefined") {
                         let reskey = key + "|" + data.data[Object.keys(data.data)[0]];
                         unityInstance.SendMessage('PlayerManager', 'GetPlayerData', reskey);
-                        console.log("GetPlayerData_" + reskey);
                       } else {
                         unityInstance.SendMessage('PlayerManager', 'GetPlayerDataFromPlayerPrefs', key);
-                        console.log("GetPlayerDataFromPlayerPrefs2_" + reskey);
                       }
                     } else {
                       console.log(error);
                       unityInstance.SendMessage('PlayerManager', 'GetPlayerDataError', key);
-                      console.log("GetPlayerDataError_" + reskey);
                     }
                   };
-
                   FAPI.Client.call({"method":"storage.get", "keys" : [key]}, callback);
                   break;
                 }
@@ -138,7 +131,6 @@
             }
           } else {
             unityInstance.SendMessage('PlayerManager', 'GetPlayerDataFromPlayerPrefs', key);
-            console.log("GetPlayerDataFromPlayerPrefs3_" + key);
           }
         }
       };
